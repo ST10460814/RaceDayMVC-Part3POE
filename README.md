@@ -1,8 +1,15 @@
 # RaceDayMVC- RaceDay Event Management Platform
 ## MVC Design Pattern
 RaceDayMVC follows the Model-View-Controller architectural pattern. Models represent application data, Views provide the user interface, and Controllers process requests and coordinate interactions with the RESTful API.
-
 This separation improves code organisation, maintainability, and the ability to extend the application.
+
+## HTTP API Communication
+
+The MVC application communicates with the TestingPoe RESTful API using HTTP requests. The EventController uses IHttpClientFactory to create a configured HTTP client.
+
+GET requests retrieve event information, POST requests submit new information, PUT requests update existing resources, and DELETE requests request resource removal.
+
+The MVC application checks API response status codes before displaying the results.
 RaceDayMVC follows the Model-View-Controller architectural pattern. Models represent application data, Views provide the user interface, and Controllers process requests and coordinate interactions with the RESTful API.
 
 This separation improves code organisation, maintainability, and the ability to extend the application.
