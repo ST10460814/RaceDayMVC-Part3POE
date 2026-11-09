@@ -105,6 +105,17 @@ Examples include unique values for selected fields, foreign-key relationships, a
 These constraints complement application-level validation and reduce the risk of inconsistent records.
 
 
+## Testing Evidence and Verification
+
+During development, the API was compiled successfully and Swagger was used to test selected endpoints.
+
+Successful tests included authentication, profile image upload, event banner upload, and retrieval of an uploaded image using its URL.
+
+SQL Server queries confirmed that uploaded image paths were stored in the appropriate records. The MVC Participant Dashboard and its navigation links were also inspected.
+
+Further testing is required to confirm all participant and organiser workflows end-to-end.
+
+
 
 ## HTTP API Communication
 
