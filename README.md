@@ -35,6 +35,14 @@ It contains three main areas: Browse Events, My Registrations, and My Results.
 
 Navigation links direct participants to the corresponding MVC routes, making it easier to access the platform's main functions.
 
+## Role-Based Navigation
+
+RaceDay distinguishes between Organiser and Participant accounts.
+
+After authentication, the application can use the stored role to determine which dashboard and navigation options should be displayed.
+
+Server-side role checks are also necessary because hiding a link does not prevent someone from requesting a restricted endpoint directly.
+
 
 ## HTTP API Communication
 
