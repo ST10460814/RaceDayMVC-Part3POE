@@ -31,7 +31,21 @@ Configuration includes settings for the database connection and the API endpoint
 
 Developers should verify these settings before running the application on another computer. Passwords, access keys, and other secrets should not be committed to GitHub
 
+## API Error Handling
 
+The MVC EventController checks whether API responses indicate success before processing returned information.
+
+When an API request fails, the application can display an error message or return an appropriate response instead of assuming the operation succeeded.
+
+This helps users understand when information could not be loaded or an operation was unsuccessful.
+
+## JSON Data Processing
+
+RaceDay uses JSON as a data exchange format between the MVC application and the RESTful API.
+
+The MVC EventController uses System.Text.Json to deserialize API responses into EventViewModel objects.
+
+Case-insensitive property matching helps map JSON properties to their corresponding C# model properties.
 RaceDayMVC is an ASP.NET Core MVC web application developed as part of the RaceDay Portfolio of Evidence (POE).
 
 The platform supports the management of running, walking, and cycling events in South Africa. It provides interfaces for Event Organisers and Participants.
