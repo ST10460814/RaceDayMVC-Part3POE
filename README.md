@@ -67,6 +67,15 @@ The image upload controller checks that the authenticated user has the Organiser
 
 If these conditions are not met, the API rejects the request.
 
+## Image File Validation
+
+The image upload functionality checks file size and supported extensions before saving an uploaded image.
+
+The API also inspects the file header to verify that the uploaded content matches an accepted image signature.
+
+Uploaded files receive generated unique filenames to reduce filename collisions and avoid relying on user-provided filenames.
+
+
 
 ## HTTP API Communication
 
