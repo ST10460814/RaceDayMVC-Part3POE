@@ -76,6 +76,17 @@ The API also inspects the file header to verify that the uploaded content matche
 Uploaded files receive generated unique filenames to reduce filename collisions and avoid relying on user-provided filenames.
 
 
+## Local Image Storage Process
+
+When a valid image is uploaded, the API creates the uploads directory if necessary and saves the file in wwwroot/uploads.
+
+The API returns a relative image URL, which is stored in the appropriate database record.
+
+For profile images, the path is saved in ProfilePictureUrl. For event banners, the path is saved in BannerUrl.
+
+This implementation uses local file storage rather than Azure Blob Storage.
+
+
 
 ## HTTP API Communication
 
