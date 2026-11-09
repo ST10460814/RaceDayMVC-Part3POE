@@ -27,6 +27,14 @@ Bootstrap containers, rows, columns, cards, and navigation elements provide a co
 
 The responsive grid system helps the interface adapt to different screen widths.
 
+## Participant Dashboard Design
+
+The Participant Dashboard provides a central navigation page for authenticated participants.
+
+It contains three main areas: Browse Events, My Registrations, and My Results.
+
+Navigation links direct participants to the corresponding MVC routes, making it easier to access the platform's main functions.
+
 
 ## HTTP API Communication
 
