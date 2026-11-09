@@ -51,6 +51,14 @@ During login, the entered password is checked against the stored hash using Veri
 
 This approach avoids storing passwords as readable plain text in the database.
 
+## Authentication Sessions
+
+The API establishes a session after successful authentication and stores information such as UserId and Role.
+
+Protected operations can inspect this session information to identify the authenticated user and apply access restrictions.
+
+The logout endpoint clears the API session. The MVC application must also clear its own session when the user logs out.
+
 
 ## HTTP API Communication
 
