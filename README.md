@@ -10,6 +10,15 @@ The MVC application communicates with the TestingPoe RESTful API using HTTP requ
 GET requests retrieve event information, POST requests submit new information, PUT requests update existing resources, and DELETE requests request resource removal.
 
 The MVC application checks API response status codes before displaying the results.
+
+## Dependency Injection
+
+RaceDay uses ASP.NET Core dependency injection to provide services to application controllers.
+
+For example, IHttpClientFactory is injected into the MVC EventController, while ApplicationDbContext is injected into API controllers.
+
+Dependency injection reduces tight coupling and makes services easier to configure, maintain, and test.
+
 RaceDayMVC follows the Model-View-Controller architectural pattern. Models represent application data, Views provide the user interface, and Controllers process requests and coordinate interactions with the RESTful API.
 
 This separation improves code organisation, maintainability, and the ability to extend the application.
