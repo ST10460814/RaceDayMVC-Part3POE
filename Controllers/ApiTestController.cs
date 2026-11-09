@@ -20,22 +20,30 @@ namespace RaceDayMVC.Controllers
                 var client = _clientFactory
                     .CreateClient("RaceDayAPI");
 
-                // Replace with your actual GET endpoint
-                var response = await client.GetAsync(
-                    "api/Events");
+                // Correct RaceDay API endpoint
+                var response = await client.GetAsync("api/Event");
 
-                var content =
-                    await response.Content.ReadAsStringAsync();
+                var content = await response.Content
+                    .ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return Content(
+                        "SUCCESS! RaceDay MVC is connected to the API!\n\n"
+                        + content,
+                        "text/plain");
+                }
 
                 return Content(
-                    $"API status: {(int)response.StatusCode}\n\n"
+                    $"API responded with status: {(int)response.StatusCode}\n\n"
                     + content,
                     "text/plain");
             }
             catch (HttpRequestException ex)
             {
                 return Content(
-                    "API connection failed: " + ex.Message);
+                    "API connection failed: " + ex.Message,
+                    "text/plain");
             }
         }
     }

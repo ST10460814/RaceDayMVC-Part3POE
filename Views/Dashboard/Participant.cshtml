@@ -1,10 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-@{
+﻿@{
     ViewData["Title"] = "Participant Dashboard";
 }
 
@@ -13,28 +7,57 @@
     <p>Discover and participate in RaceDay events.</p>
 
     <div class="row mt-4">
+
+        <!-- Browse Events -->
         <div class="col-md-4 mb-3">
-            <div class="card shadow p-4">
-                <h4>Browse Events</h4>
-                <p>
-                    Find upcoming running, walking
-                    and cycling events.
-                </p>
-            </div>
+            <a asp-controller="Event"
+               asp-action="Index"
+               class="text-decoration-none text-dark">
+
+                <div class="card shadow p-4 h-100">
+                    <h4>Browse Events</h4>
+                    <p>
+                        Find upcoming running, walking
+                        and cycling events.
+                    </p>
+                    <span class="text-primary">
+                        Browse Events →
+                    </span>
+                </div>
+            </a>
         </div>
 
+        <!-- My Registrations -->
         <div class="col-md-4 mb-3">
-            <div class="card shadow p-4">
-                <h4>My Registrations</h4>
-                <p>View your event enrolments.</p>
-            </div>
+            <a asp-controller="Registration"
+               asp-action="Mine"
+               class="text-decoration-none text-dark">
+
+                <div class="card shadow p-4 h-100">
+                    <h4>My Registrations</h4>
+                    <p>View your event enrolments.</p>
+                    <span class="text-primary">
+                        View Registrations →
+                    </span>
+                </div>
+            </a>
         </div>
 
+        <!-- My Results -->
         <div class="col-md-4 mb-3">
-            <div class="card shadow p-4">
-                <h4>My Results</h4>
-                <p>View your race performances.</p>
-            </div>
+            <a asp-controller="Result"
+               asp-action="Mine"
+               class="text-decoration-none text-dark">
+
+                <div class="card shadow p-4 h-100">
+                    <h4>My Results</h4>
+                    <p>View your race performances.</p>
+                    <span class="text-primary">
+                        View Results →
+                    </span>
+                </div>
+            </a>
         </div>
+
     </div>
 </div>

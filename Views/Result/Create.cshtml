@@ -1,0 +1,74 @@
+﻿@model RaceDayMVC.Models.ResultViewModel
+
+@{
+    ViewData["Title"] = "Capture Race Result";
+}
+
+<div class="container mt-4">
+    <h2>Capture Race Result</h2>
+    <p class="text-muted">
+        Record a participant's finishing time and position.
+    </p>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    <form asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="All"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="RegistrationId"
+                   class="form-label"></label>
+            <input asp-for="RegistrationId"
+                   class="form-control"
+                   type="number" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FinishTime"
+                   class="form-label"></label>
+            <input asp-for="FinishTime"
+                   class="form-control"
+                   placeholder="01:25:30" />
+            <small class="text-muted">
+                Enter the finishing time as HH:mm:ss.
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FinishingPosition"
+                   class="form-label"></label>
+            <input asp-for="FinishingPosition"
+                   class="form-control"
+                   type="number" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ResultStatus"
+                   class="form-label"></label>
+            <select asp-for="ResultStatus"
+                    class="form-select">
+                <option value="Official">Official</option>
+                <option value="Pending">Pending</option>
+                <option value="Disqualified">Disqualified</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Save Result
+        </button>
+
+        <a asp-controller="Dashboard"
+           asp-action="Organiser"
+           class="btn btn-secondary">
+            Back to Dashboard
+        </a>
+    </form>
+</div>

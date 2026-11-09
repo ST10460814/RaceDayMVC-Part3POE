@@ -1,0 +1,107 @@
+﻿@model List<RaceDayMVC.Models.EventViewModel>
+
+@{
+    ViewData["Title"] = "RaceDay Events";
+    bool organiser = Context.Session.GetString("Role") == "Organiser";
+    bool participant = Context.Session.GetString("Role") == "Participant";
+}
+
+<h2>RaceDay Events</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (organiser)
+{
+    <a asp-action="Create"
+       class="btn btn-primary mb-3">
+        Create New Event
+    </a>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Entry Fee</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EventName</td>
+                <td>@item.EventDate.ToString("dd MMM yyyy")</td>
+                <td>@item.Location</td>
+                <td>R @item.EntryFee.ToString("N2")</td>
+                <td>@item.Status</td>
+
+                <td>
+                    @if (organiser)
+                    {
+                        <a asp-action="Edit"
+                           asp-route-id="@item.Id"
+                           class="btn btn-sm btn-warning">
+                            Edit
+                        </a>
+
+                        <form asp-action="Delete"
+                              asp-route-id="@item.Id"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+
+                            <button type="submit"
+                                    class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Delete event?')">
+                                Delete
+                            </button>
+                        </form>
+
+                        <a asp-controller="Registration"
+                           asp-action="EventRegistrations"
+                           asp-route-eventId="@item.Id"
+                           class="btn btn-sm btn-info">
+                            Registrations
+                        </a>
+                    }
+
+                    @if (participant && item.Status == "Open")
+                    {
+                        <form asp-controller="Registration"
+                              asp-action="Enrol"
+                              method="post"
+                              class="d-inline">
+                            @Html.AntiForgeryToken()
+
+                            <input type="hidden"
+                                   name="eventId"
+                                   value="@item.Id" />
+
+                            <button type="submit"
+                                    class="btn btn-sm btn-success">
+                                Enrol
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

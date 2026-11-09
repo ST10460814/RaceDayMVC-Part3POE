@@ -9,7 +9,12 @@
 @{
     ViewData["Title"] = "Login";
 }
-
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
 <div class="container mt-5" style="max-width:500px">
     <div class="card shadow p-4">
         <h2 class="text-center">RaceDay Login</h2>
