@@ -1,4 +1,11 @@
 # RaceDayMVC- RaceDay Event Management Platform
+## MVC Design Pattern
+RaceDayMVC follows the Model-View-Controller architectural pattern. Models represent application data, Views provide the user interface, and Controllers process requests and coordinate interactions with the RESTful API.
+
+This separation improves code organisation, maintainability, and the ability to extend the application.
+RaceDayMVC follows the Model-View-Controller architectural pattern. Models represent application data, Views provide the user interface, and Controllers process requests and coordinate interactions with the RESTful API.
+
+This separation improves code organisation, maintainability, and the ability to extend the application.
 
 RaceDayMVC is an ASP.NET Core MVC web application developed as part of the RaceDay Portfolio of Evidence (POE).
 
