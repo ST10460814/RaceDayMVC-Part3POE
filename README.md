@@ -19,6 +19,14 @@ Razor syntax allows C# expressions to be combined with HTML, enabling pages to d
 
 The application uses Razor views for authentication, dashboard navigation, and event-related interfaces.
 
+## Bootstrap Styling
+
+The RaceDayMVC interface uses Bootstrap for page layout and visual components.
+
+Bootstrap containers, rows, columns, cards, and navigation elements provide a consistent design across the application.
+
+The responsive grid system helps the interface adapt to different screen widths.
+
 
 ## HTTP API Communication
 
