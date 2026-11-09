@@ -23,6 +23,15 @@ RaceDayMVC follows the Model-View-Controller architectural pattern. Models repre
 
 This separation improves code organisation, maintainability, and the ability to extend the application.
 
+## Application Configuration
+
+The application uses configuration files such as appsettings.json and appsettings.Development.json.
+
+Configuration includes settings for the database connection and the API endpoint used by the MVC application.
+
+Developers should verify these settings before running the application on another computer. Passwords, access keys, and other secrets should not be committed to GitHub
+
+
 RaceDayMVC is an ASP.NET Core MVC web application developed as part of the RaceDay Portfolio of Evidence (POE).
 
 The platform supports the management of running, walking, and cycling events in South Africa. It provides interfaces for Event Organisers and Participants.
