@@ -43,6 +43,14 @@ After authentication, the application can use the stored role to determine which
 
 Server-side role checks are also necessary because hiding a link does not prevent someone from requesting a restricted endpoint directly.
 
+## Password Protection
+
+The TestingPoe API uses ASP.NET Core PasswordHasher to hash passwords during account registration.
+
+During login, the entered password is checked against the stored hash using VerifyHashedPassword.
+
+This approach avoids storing passwords as readable plain text in the database.
+
 
 ## HTTP API Communication
 
