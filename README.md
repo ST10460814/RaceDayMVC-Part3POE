@@ -3,6 +3,15 @@
 RaceDayMVC follows the Model-View-Controller architectural pattern. Models represent application data, Views provide the user interface, and Controllers process requests and coordinate interactions with the RESTful API.
 This separation improves code organisation, maintainability, and the ability to extend the application.
 
+## View Models
+
+View models help transfer structured information between controllers and Razor views.
+
+The EventViewModel is used by the MVC application when displaying, creating, and editing event information.
+
+View models provide a clear structure for information required by the user interface.
+
+
 ## HTTP API Communication
 
 The MVC application communicates with the TestingPoe RESTful API using HTTP requests. The EventController uses IHttpClientFactory to create a configured HTTP client.
