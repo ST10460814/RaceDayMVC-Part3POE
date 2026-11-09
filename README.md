@@ -11,6 +11,14 @@ The EventViewModel is used by the MVC application when displaying, creating, and
 
 View models provide a clear structure for information required by the user interface.
 
+## Razor Views
+
+RaceDayMVC uses Razor views to generate HTML pages from server-side application data.
+
+Razor syntax allows C# expressions to be combined with HTML, enabling pages to display dynamic information.
+
+The application uses Razor views for authentication, dashboard navigation, and event-related interfaces.
+
 
 ## HTTP API Communication
 
