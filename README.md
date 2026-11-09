@@ -59,6 +59,14 @@ Protected operations can inspect this session information to identify the authen
 
 The logout endpoint clears the API session. The MVC application must also clear its own session when the user logs out.
 
+## Event Ownership and Authorisation
+
+Event ownership helps prevent organisers from modifying resources belonging to other organisers.
+
+The image upload controller checks that the authenticated user has the Organiser role and that the event's OrganiserId matches the logged-in user's ID.
+
+If these conditions are not met, the API rejects the request.
+
 
 ## HTTP API Communication
 
