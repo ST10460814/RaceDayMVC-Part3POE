@@ -87,6 +87,15 @@ For profile images, the path is saved in ProfilePictureUrl. For event banners, t
 This implementation uses local file storage rather than Azure Blob Storage.
 
 
+## Database Relationships
+
+RaceDayDB contains related tables representing users, events, categories, registrations, and results.
+
+The Event table references an organiser, while registrations associate participants with event participation records.
+
+Primary keys identify individual records, and foreign keys help maintain relationships between related tables.
+
+
 
 ## HTTP API Communication
 
