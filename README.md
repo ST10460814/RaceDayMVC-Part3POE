@@ -96,6 +96,15 @@ The Event table references an organiser, while registrations associate participa
 Primary keys identify individual records, and foreign keys help maintain relationships between related tables.
 
 
+## Database Constraints and Integrity
+
+Database constraints support the consistency of stored RaceDay information.
+
+Examples include unique values for selected fields, foreign-key relationships, and checks that restrict invalid status values or numerical values.
+
+These constraints complement application-level validation and reduce the risk of inconsistent records.
+
+
 
 ## HTTP API Communication
 
